@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>정우의 방명록</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+<h2>정우의 방명록 <a th:href="@{/register}" class="btn btn-primary float-end">글쓰기</a></h2>
+<table class="table mt-3">
+    <thead>
+    <tr>
+        <th>번호</th><th>제목</th><th>작성자</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="dto : ${list}">
+        <td th:text="${dto.gno}"></td>
+        <td>
+            <a th:href="@{/read(gno=${dto.gno})}" th:text="${dto.title}" style="text-decoration: none; color: black; font-weight: bold;"></a>
+        </td>
+        <td th:text="${dto.writer}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
