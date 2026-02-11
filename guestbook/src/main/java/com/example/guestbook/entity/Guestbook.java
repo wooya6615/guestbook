@@ -1,4 +1,4 @@
-package com.example.guestbook;
+package com.example.guestbook.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,13 +10,12 @@ import java.time.LocalDateTime;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Getter
-@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 
-public class Guestbook {
+public class Guestbook extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //번호 자동 생성
@@ -30,9 +29,4 @@ public class Guestbook {
 
     @Column(length = 50, nullable = false)
     private String writer;
-
-    @CreatedDate
-    @Column(updatable = false)
-    private LocalDateTime regDate;
-
 }

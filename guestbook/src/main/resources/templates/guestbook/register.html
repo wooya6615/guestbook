@@ -7,7 +7,7 @@
 </head>
 <body class="container mt-5">
 <h2>새로운 글 작성</h2>
-<form th:action="@{/register}" method="post">
+<form th:action="@{/guestbook/register}" method="post">
     <div class="mb-3">
         <label>제목</label>
         <input type="text" name="title" class="form-control" required>
@@ -21,7 +21,7 @@
         <input type="text" name="writer" class="form-control" required>
     </div>
     <button type="submit" class="btn btn-success">등록</button>
-    <a th:href="@{/}" class="btn btn-secondary">취소</a>
+    <a th:href="@{/guestbook/list}" class="btn btn-secondary">취소</a>
 </form>
 </body>
 </html>
